@@ -1,0 +1,304 @@
+/*
+  styles.css
+  Purpose: Main stylesheet for About Me + Projects page
+  Author: [Your Name]
+  Accessibility: High contrast, focus states, readable fonts
+  Responsive: Mobile-first, flexible layout
+*/
+
+
+:root {
+  --color-bg: #f6f8fa;
+  --color-primary: #22223b;
+  --color-accent: #3a86ff;
+  --color-text: #22223b;
+  --color-footer: #f1f3f6;
+  --color-focus: #ffbe0b;
+  --font-main: 'Inter', 'Segoe UI', Arial, sans-serif;
+  --font-heading: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  --spacing: 1.2rem;
+  --max-width: 900px;
+  --card-radius: 18px;
+  --card-shadow: 0 4px 24px rgba(34,34,59,0.08);
+  --nav-link-gap: 2.5rem;
+}
+
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.header {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(34,34,59,0.04);
+  padding: 0.5rem 0;
+}
+.header__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+.header__nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+}
+.header__nav-list {
+  display: flex;
+  gap: var(--nav-link-gap);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.header__nav-link {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.05em;
+  letter-spacing: 0.01em;
+  padding: 0.5em 0.2em;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+.header__nav-link:focus,
+.header__nav-link:hover {
+  color: var(--color-primary);
+  background: var(--color-footer);
+  box-shadow: 0 2px 8px rgba(58,134,255,0.08);
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+.site-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+
+.main {
+  max-width: var(--max-width);
+  margin: 2.5rem auto 0 auto;
+  padding: var(--spacing);
+  flex: 1;
+}
+
+
+.about {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
+  justify-content: center;
+}
+.about__title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+}
+.about__figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about__img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--color-accent);
+  box-shadow: 0 4px 16px rgba(58,134,255,0.10);
+}
+.about__caption {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  margin-top: 0.7em;
+  color: var(--color-accent);
+}
+.about__desc {
+  margin-top: 0;
+  max-width: 420px;
+  font-size: 1.08em;
+  text-align: left;
+}
+
+
+.projects {
+  margin-bottom: 2.5rem;
+}
+.projects__title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+}
+.projects__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.projects__item {
+  background: #fff;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  min-width: 220px;
+  max-width: 270px;
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border: none;
+}
+.projects__item:hover,
+.projects__item:focus-within {
+  box-shadow: 0 8px 32px rgba(58,134,255,0.13);
+  transform: translateY(-2px) scale(1.02);
+}
+.projects__item-title {
+  margin: 0 0 0.5em 0;
+  font-size: 1.15em;
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+.projects__item-desc {
+  margin: 0 0 1em 0;
+  font-size: 1em;
+  color: #444;
+}
+.projects__item-link {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1em;
+  border-radius: 6px;
+  padding: 0.2em 0.7em;
+  background: #f6f8fa;
+  box-shadow: 0 2px 8px rgba(58,134,255,0.04);
+  transition: background 0.2s, color 0.2s;
+}
+.projects__item-link:focus,
+.projects__item-link:hover {
+  color: #fff;
+  background: var(--color-accent);
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+
+.footer {
+  background: var(--color-footer);
+  text-align: center;
+  padding: var(--spacing);
+  box-shadow: 0 -2px 8px rgba(34,34,59,0.04);
+}
+.footer__text {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 0.98em;
+}
+.footer__email {
+  color: var(--color-accent);
+  text-decoration: underline;
+  font-weight: 500;
+}
+.footer__email:focus,
+.footer__email:hover {
+  color: var(--color-primary);
+  background: var(--color-footer);
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+
+/* =====================
+  Skip Link
+====================== */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  background: var(--color-accent);
+  color: #fff;
+  padding: 0.7em 1.2em;
+  border-radius: 6px;
+  z-index: 1000;
+  font-weight: 600;
+  transition: left 0.2s;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+
+/* Responsive Layout */
+@media (max-width: 900px) {
+  .main {
+    padding: 0.5rem;
+  }
+  .about {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  .about__desc {
+    text-align: center;
+  }
+  .projects__list {
+    gap: 1.2rem;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    padding: 0.2rem;
+  }
+  .about__img {
+    width: 80px;
+    height: 80px;
+  }
+  .projects__item {
+    padding: 1rem 0.7rem;
+    min-width: 160px;
+    max-width: 100%;
+  }
+  .projects__list {
+    flex-direction: column;
+    align-items: center;
+  }
+}
